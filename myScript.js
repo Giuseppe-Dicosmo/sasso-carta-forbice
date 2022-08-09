@@ -1,3 +1,7 @@
+const sasso = document.querySelector("#sasso").value;
+const carta = document.querySelector("#carta").value;
+const forbice = document.querySelector("#forbice").value;
+
 const scoreUser = document.querySelector("#score-user");
 const scoreBot = document.querySelector("#score-bot");
 
@@ -14,7 +18,7 @@ function play(event) {
     let bot = Math.floor(Math.random() * 3 + 1);
     console.log("bot", bot);
 
-    if (bot == sasso.value && bot == forbici.value && bot == carta.value) {
+    if (bot == sasso || bot == carta || bot == forbice) {
       punteggioUser++;
       console.log("hai vinto");
     } else if (bot == buttonValue) {
@@ -26,16 +30,19 @@ function play(event) {
       console.log("hai perso");
     }
 
+    //crea delle immagini
+    user(event, bot);
+
+    //stampa i punteggi
     console.log("🚀punteggio user", punteggioUser);
     console.log("🚀punteggio bot", punteggioBot);
     scoreUser.textContent = `${punteggioUser}`;
     scoreBot.textContent = `${punteggioBot}`;
 
-    //crea delle immagini
-    const imgUserbot = user(event, bot);
+    //dichiara chi è il vincitore
+    winLost(punteggioUser, punteggioBot);
 
-    const punteggi = punteggio(punteggioUser, punteggioBot);
-
+    //resetta il Math.random
     bot.reset();
   }
 }
