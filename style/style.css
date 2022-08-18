@@ -3,8 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  position: relative;
+}
 
-main {
+.container-img {
   height: 100vh;
   display: flex;
   position: relative;
@@ -50,6 +53,7 @@ main {
   border-radius: 30px;
   font-size: 100px;
   cursor: pointer;
+  border: none;
   /* background-color: transparent; */
 }
 
@@ -89,3 +93,37 @@ main {
 :where(.img-user, .img-bot) > figure {
   font-size: 30rem;
 }
+
+.container-modal {
+  position: relative;
+}
+
+#modal {
+  width: 50%;
+  height: 30%;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-lost {
+  background-color: rgba(255, 0, 0, 0.8);
+}
+
+.modal-win {
+  background-color: rgba(0, 255, 0, 0.8);
+}
+
+.modal-tie {
+  background-color: rgba(122, 183, 255, 0.8);
+}
+
+

@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Morra cinese</title>
     <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
-    <main>
+    <div class="container-img">
       <div class="container user">
         <div class="img-score-user">
           <div class="score">
@@ -28,15 +28,23 @@
           <div class="img-bot"></div>
         </div>
       </div>
-    </main>
+    </div>
 
     <div class="comandi">
       <button id="sasso" value="1">✊</button>
 
       <button id="carta" value="2">✋</button>
 
-      <button id="forbice" value="3">✌️</button>
+      <button id="forbici" value="3">✌️</button>
     </div>
+
+    <div class="container-modal">
+      <dialog id="modal">
+        <h1 id="risposta"></h1>
+        <button class="close-button">close</button>
+      </dialog>
+    </div>
+
     <script src="myScript.js"></script>
   </body>
 </html>
