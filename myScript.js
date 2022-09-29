@@ -40,6 +40,7 @@ function play(event) {
 
     //resetta il Math.random
     bot.reset();
+    console.log("bot1", bot);
   }
 }
 
@@ -112,38 +113,45 @@ function user(e, bot) {
 
 const modal = document.querySelector("#modal");
 const risposta = document.querySelector("#risposta");
-const closeModal = document.querySelector(".close-button");
 
+//la funzione del model dove stampa la vittoria
 function winLost(punteggioUser, punteggioBot) {
-  if (punteggioUser == 10) {
-    risposta.textContent = `COMPLIMENTI HAI VINTO 😁`;
-    console.log("COMPLIMENTI HAI VINTO");
+  if (punteggioUser == 10 && punteggioBot == 10) {
+    risposta.textContent = `HAI PAREGGIATO 🙂`;
+    console.log("HAI PAREGGIATO");
     modal.style.display = "flex";
-    modal.classList.add("modal-win");
+    modal.style.backgroundColor = "rgba(122, 183, 255, 0.7)";
     modal.showModal();
   } else if (punteggioBot == 10) {
     risposta.textContent = `MI DISPIACE HAI PERSO 😫`;
     console.log("MI DISPIACE HAI PERSO");
     modal.style.display = "flex";
-    modal.classList.add("modal-lost");
+    modal.style.backgroundColor = "rgba(255, 0, 0, 0.7)";
     modal.showModal();
-  } else if (punteggioUser == 10 && punteggioBot == 10) {
-    risposta.textContent = `HAI PAREGGIATO 🙂`;
-    console.log("HAI PAREGGIATO");
+  } else if (punteggioUser == 10) {
+    risposta.textContent = `COMPLIMENTI HAI VINTO 😁`;
+    console.log("COMPLIMENTI HAI VINTO");
     modal.style.display = "flex";
-    modal.classList.add("modal-tie");
+    modal.style.backgroundColor = "rgba(0, 255, 0, 0.7)";
     modal.showModal();
   }
 }
 
-closeModal.addEventListener("click", () => {
+const closeModal = document.querySelector(".close-button");
+closeModal.addEventListener("click", reset);
+
+function reset() {
+  // location.reload();
+
   modal.close();
 
   modal.style.display = "none";
 
-  punteggioUser = `0`;
-  punteggioBot = `0`;
-
   imgUser.textContent = ``;
   imgBot.textContent = ``;
-});
+
+  punteggioUser = 0;
+  punteggioBot = 0;
+  scoreUser.textContent = 0;
+  scoreBot.textContent = 0;
+}

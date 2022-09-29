@@ -54,16 +54,9 @@ body {
   font-size: 100px;
   cursor: pointer;
   border: none;
-  /* background-color: transparent; */
 }
 
-.comandi button:hover {
-  /* background-color: slateblue; */
-}
 
-.comandi button:active {
-  /* background-color: darkgrey; */
-}
 
 .comandi button:active {
   scale: 0.9;
@@ -104,26 +97,13 @@ body {
   border-radius: 30px;
   border: none;
   color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
-.modal-lost {
-  background-color: rgba(255, 0, 0, 0.8);
-}
-
-.modal-win {
-  background-color: rgba(0, 255, 0, 0.8);
-}
-
-.modal-tie {
-  background-color: rgba(122, 183, 255, 0.8);
-}
-
-
